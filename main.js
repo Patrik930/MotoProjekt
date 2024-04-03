@@ -34,7 +34,7 @@ function renderData(data){
     let imgObj = images.find(obj => obj.model.trim().includes(e.model.trim()))
     if(imgObj){
 
-    row.innerHTML += `<div class="max-w-sm rounded overflow-hidden shadow-lg">
+    row.innerHTML += `<div class="max-w-sm rounded overflow-hidden shadow-lg text-center">
     <img class="w-full aspect-square object-contain" src="${imgObj?.img}" alt="${e.model}">
     <div class="px-6 py-4">
       <div class="font-bold text-xl mb-2 text-center text-lime-700">${e.model}</div>
