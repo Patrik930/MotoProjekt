@@ -1,4 +1,4 @@
-export async function fetchMotorcycles() {
+export async function fetchMotorcycles(renderData) {
     try {
         const response = await fetch('https://api.api-ninjas.com/v1/motorcycles?make=kawasaki&model=ninja', {
             method: 'GET',
@@ -13,7 +13,7 @@ export async function fetchMotorcycles() {
         }
         
         const result = await response.json();
-        console.log(result);
+        renderData(result)
     } catch (error) {
         console.error('Fetch Error:', error);
     }

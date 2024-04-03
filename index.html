@@ -11,6 +11,9 @@
     <script src="main.js" type="module"></script>
     <title>Document</title>
     <style>
+
+
+
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
         .ChangingColorText{
             animation: color-change 7s infinite;
@@ -34,6 +37,13 @@
         }
         
     </style>
+    <style type="text/tailwindcss">
+        @layer components{
+            .myBtn{
+                @apply border-[1px] border-green-700 rounded-full font-bold text-green-700 px-4 py-3 hover:bg-green-700 hover:text-white transition duration-300 ease-in-out;
+            }
+        }
+    </style>
 </head>
 <body class="flex justify-center">
     <div class="container">
@@ -51,10 +61,12 @@
     </div>
 
     <script>
+        /*
         setInterval(function() {
             document.getElementById("RGB").classList.add("black_white");
             document.getElementById("RGB").classList.add("white_black");
         }, 1000);
+        */
     </script>
 </body>
 </html>
