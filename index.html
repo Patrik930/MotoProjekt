@@ -11,9 +11,6 @@
     <script src="main.js" type="module"></script>
     <title>Document</title>
     <style>
-
-
-
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
         .ChangingColorText{
             animation: color-change 7s infinite;
@@ -42,20 +39,52 @@
             .myBtn{
                 @apply border-[1px] border-green-700 rounded-full font-bold text-green-700 px-4 py-3 hover:bg-green-700 hover:text-white transition duration-300 ease-in-out;
             }
+            .myInput{
+                @apply w-[150px] block   rounded-lg border border-gray-200 bg-white px-5 py-4 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40  ;
+
+            }
+            .LogRegBtn{
+                @apply  disabled:opacity-25 px-6 py-2 text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80;            
+            }
+            .myCard{
+                @apply w-[300px] h-[300px] border border-indigo-700 text-indigo-800;
+            }
+            .page-btn{
+                @apply w-[50px] h-[50px] border border-indigo-400;
+            }
         }
     </style>
 </head>
 <body class="flex justify-center">
     <div class="container">
-        <div id="RGB" class="cim text-8xl flex justify-center ChangingColorText black_white">
-            <h1>Kawasaki Ninja</h1>
+        <div id="RGB" class="flex justify-between black_white">
+            <h1 class="cim ChangingColorText text-8xl">Kawasaki Ninja</h1>
+            <div class="loginRegister border flex justify-end gap-2 items-center p-2">
+      
+                <input class="myInput w-[250px] hidden"  type="text" id="username" placeholder="Username">
+                <input class="myInput w-[250px] hidden"  type="password" id="pw" placeholder="Password">
+                <button class="LogRegBtn login">Login</button>
+                <button class="LogRegBtn register">Register</button>
+                <button class="LogRegBtn hidden logout" title="username">Logout</button>
+            </div>
+            <div id="msg"></div>
         </div>
+        
         <div class="flex justify-center animate-bounce">
             <div>
                 <i class="fa-solid fa-circle-arrow-down text-5xl"></i>
             </div>
         </div>
-        <div class="pagination flex flex-wrap justify-center gap-4 sor"></div>
+        <div class="pagination flex flex-wrap justify-center gap-4 sor">
+            <div class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">
+                <label for="tw-modal" class="pointer-events-none invisible fixed inset-0 flex cursor-pointer items-center justify-center overflow-hidden overscroll-contain bg-state-700/30 opacity-0 transition-all duration-200 ease-in-out peer-checked:pointer-events-auto peer-checked:visible peer-checked:opacity-100 peer-checked:[&>*]:translate-y-0 peer-checked:[&>*]:scale-100">
+                    <label class="max-h-[clacl(100vh-5em)] h-fit max-w-lg scale-90 overflow-y-auto overscroll-contain rounded-md bg-white p-6 text-black shadow-2xl transition" for="">
+                        <h3 class="text-lg font-bold">Modal</h3>
+                        <p class="py-4"></p>
+                    </label>
+                </label>
+            </div>
+        </div>
 
        
     </div>
