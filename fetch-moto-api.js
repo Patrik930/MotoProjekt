@@ -1,6 +1,6 @@
-export async function fetchMotorcycles(renderData) {
+export async function fetchMotorcycles(render, make, model) {
     try {
-        const response = await fetch('https://api.api-ninjas.com/v1/motorcycles?make=kawasaki&model=ninja', {
+        const response = await fetch(`https://api.api-ninjas.com/v1/motorcycles?make=${make}&model=${model}`, {
             method: 'GET',
             headers: {
                 'X-Api-Key': 'T5cqy7FBK3Cw/1U8qaBYtw==rcmdKF3RbIc1b2tt',
@@ -13,10 +13,10 @@ export async function fetchMotorcycles(renderData) {
         }
         
         const result = await response.json();
-        renderData(result)
+        render(result)
     } catch (error) {
         console.error('Fetch Error:', error);
     }
 }
 
-fetchMotorcycles();
+// fetchMotorcycles("kawasaki", "ninja");

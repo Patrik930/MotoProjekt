@@ -5,9 +5,10 @@ import { verifyAttribute } from "./verifyAttribute.js"
 let images = []
 
 
-const project = ()=>{
+const project = async ()=>{
       let url = "https://raw.githubusercontent.com/Patrik930/MotoProjektImages/main/MotoImages"
-      getData(url,renderImages)
+      await getData(url, renderImages)
+      await fetchMotorcycles(renderData, "kawasaki", "ninja")
       
 }
 
@@ -16,8 +17,8 @@ function renderImages(data){
   /* console.log(data);
   */
    images = data
-   console.log(images);
-   fetchMotorcycles(renderData)
+//    console.log(images);
+//    fetchMotorcycles(renderData, "kawasaki", "ninja")
    /*
    */
 }
@@ -31,20 +32,19 @@ function renderData(data){
   console.log(images);
 
   let row = document.querySelector(".sor")
+  row.innerHTML = ""
   data.forEach(e => {
     let imgObj = images.find(obj => obj.model.trim().includes(e.model.trim()))
-    if(imgObj){
-
-    row.innerHTML += `<div class="max-w-sm rounded overflow-hidden shadow-lg text-center">
-    <img class="w-full aspect-square object-contain" src="${imgObj?.img}" alt="${e.model}">
-    <div class="px-6 py-4">
-      <div class="font-bold text-xl mb-2 text-center text-lime-700">${e.model}</div>
-      <button class="myBtn">More Info</button>
-      <p class="text-gray-700 text-base"></p>
-    </div>
- </div>`
-    }  
-    })
+    row.insertAdjacentHTML("beforeend", 
+        `<div class="max-w-sm rounded overflow-hidden shadow-lg text-center">
+        <img class="w-full aspect-square object-contain" src="${imgObj?.img}" alt="${e.model}">
+        <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2 text-center text-lime-700">${e.model}</div>
+        <button class="myBtn">More Info</button>
+        <p class="text-gray-700 text-base"></p>
+        </div>
+        </div>`)
+   })
 }
 
 
@@ -123,10 +123,12 @@ document.querySelectorAll(".Brand").forEach(obj=>{
     obj.addEventListener('click',ShowMoreBrand)
 })
 let h1 = document.querySelector("h1")
-function ShowMoreBrand(e){
+async function ShowMoreBrand(e){
     if(e.target.classList.contains("Yamaha")){
         h1.textContent = "Yamaha YZF-R"
         h1.style.color = "rgb(2, 2, 174)"
+        await getData("https://raw.githubusercontent.com/Patrik930/MotoImagesYamaha/main/MotoImagesYamaha", renderImages)
+        await fetchMotorcycles(renderData, "yamaha", "yzf-r")
     }
     if(e.target.classList.contains("Suzuki")){
         h1.textContent = "Suzuki GSX-R"
