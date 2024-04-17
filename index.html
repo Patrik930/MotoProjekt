@@ -20,18 +20,7 @@
             -webkit-text-stroke-width: 3px;
             -webkit-text-stroke-color: black;
         }
-        @keyframes color-change {
-            10% { color: green; }
-            20% { color:black;}
-            30% { color: green; }
-            40% { color:black;}
-            50% { color: green; }
-            60% { color:black;}
-            70% { color: green; }
-            80% { color:black;}
-            90% { color: green; }
-            100% { color: black; }
-        }
+        
         
     </style>
     <style type="text/tailwindcss">
@@ -57,23 +46,24 @@
 </head>
 <body class="flex justify-center">
     <div class="container">
-        <div id="RGB" class="flex justify-between black_white">
-            <h1 class="cim ChangingColorText text-8xl">Kawasaki Ninja</h1>
-            <div class="loginRegister border flex justify-end gap-2 items-center p-2">
-      
-                <input class="myInput w-[250px] hidden"  type="text" id="username" placeholder="Username">
-                <input class="myInput w-[250px] hidden"  type="password" id="pw" placeholder="Password">
-                <button class="LogRegBtn login">Login</button>
-                <button class="LogRegBtn register">Register</button>
-                <button class="LogRegBtn hidden logout" title="username">Logout</button>
-            </div>
-            <div id="msg"></div>
+        <div id="RGB" class="flex justify-center black_white">
+            <h1 class="cim ChangingColorText text-8xl"></h1>
         </div>
+        <div class="loginRegister border flex justify-center gap-2 items-center p-2">
+      
+            <input class="log myInput w-[250px] hidden"  type="text" id="username" placeholder="Username">
+            <input class="log myInput w-[250px] hidden"  type="password" id="pw" placeholder="Password">
+            <button class="log LogRegBtn login">Login</button>
+            <button class="log LogRegBtn register">Register</button>
+            <button class="log LogRegBtn hidden logout" title="username">Logout</button>
+        </div>
+        <div id="msg"></div>
         
-        <div class="flex justify-center animate-bounce">
-            <div>
-                <i class="fa-solid fa-circle-arrow-down text-5xl"></i>
-            </div>
+        <div class="flex justify-center">
+            <button type="button" class="Yamaha Brand text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Yamaha</button>
+            <button type="button" class="Suzuki Brand text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Suzuki</button>
+            <button type="button" class="Honda Brand text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Honda</button>
+            <button type="button" class="Kawasaki Brand text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Kawasaki</button>
         </div>
         <div class="pagination flex flex-wrap justify-center gap-4 sor">
             <div class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-gray-50 py-6 sm:py-12">

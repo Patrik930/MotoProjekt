@@ -6,7 +6,7 @@ let images = []
 
 
 const project = ()=>{
-      const url = "https://raw.githubusercontent.com/Patrik930/MotoProjektImages/main/MotoImages"
+      let url = "https://raw.githubusercontent.com/Patrik930/MotoProjektImages/main/MotoImages"
       getData(url,renderImages)
       
 }
@@ -48,7 +48,7 @@ function renderData(data){
 }
 
 
-document.querySelectorAll('button').forEach(obj=>{
+document.querySelectorAll('.log').forEach(obj=>{
     obj.addEventListener('click',auth)
 })
 
@@ -117,4 +117,27 @@ function hideInpt(){
     document.querySelectorAll("input").forEach((obj)=>{
         obj.classList.add("hidden")
     })
+}
+
+document.querySelectorAll(".Brand").forEach(obj=>{
+    obj.addEventListener('click',ShowMoreBrand)
+})
+let h1 = document.querySelector("h1")
+function ShowMoreBrand(e){
+    if(e.target.classList.contains("Yamaha")){
+        h1.textContent = "Yamaha YZF-R"
+        h1.style.color = "rgb(2, 2, 174)"
+    }
+    if(e.target.classList.contains("Suzuki")){
+        h1.textContent = "Suzuki GSX-R"
+        h1.style.color = "rgb(0, 102, 255)"
+    }
+    if(e.target.classList.contains("Honda")){
+        h1.textContent = "Honda CBR"
+        h1.style.color = "rgb(255, 0, 0)"
+    }
+    if(e.target.classList.contains("Kawasaki")){
+        h1.textContent = "Kawasaki Ninja"
+        h1.style.color = "rgb(4, 150, 16)"
+    }
 }
