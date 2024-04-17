@@ -33,10 +33,13 @@ function renderData(data){
 
   let row = document.querySelector(".sor")
   row.innerHTML = ""
+  let models = []
   data.forEach(e => {
     let imgObj = images.find(obj => obj.model.trim().includes(e.model.trim()))
+    if (!imgObj || models.includes(e.model)) return
+    models.push(e.model)
     row.insertAdjacentHTML("beforeend", 
-        `<div class="max-w-sm rounded overflow-hidden shadow-lg text-center">
+        `<div class="max-w-sm min-w-72 flex-1 rounded overflow-hidden shadow-lg text-center">
         <img class="w-full aspect-square object-contain" src="${imgObj?.img}" alt="${e.model}">
         <div class="px-6 py-4">
         <div class="font-bold text-xl mb-2 text-center text-lime-700">${e.model}</div>
@@ -141,5 +144,7 @@ async function ShowMoreBrand(e){
     if(e.target.classList.contains("Kawasaki")){
         h1.textContent = "Kawasaki Ninja"
         h1.style.color = "rgb(4, 150, 16)"
+        await getData("https://raw.githubusercontent.com/Patrik930/MotoProjektImages/main/MotoImages",renderImages)
+        await fetchMotorcycles(renderData, "kawasaki", "ninja")
     }
 }
