@@ -9,4 +9,4 @@
 ![Feladatok megosztása](trello.png "")
 
 
-- Oldal linkje: 
+- Oldal linkje: https://patrik930.github.io/MotoProjekt/
