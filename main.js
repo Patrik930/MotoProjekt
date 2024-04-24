@@ -68,11 +68,9 @@ export function auth(e){
     }
     console.log(e.target.textContent);
     let username=document.getElementById('username').value
+  
     let pw=document.getElementById('pw').value
-    if(!verifyPW(pw)){
-        document.querySelector('#msg').innerHTML=`Túl rövid jelszó!`
-        return 
-    }
+
     let users= JSON.parse(localStorage.getItem('users')) || [] 
     if(username.length==0 || pw.length==0) return
     //register esetén:
