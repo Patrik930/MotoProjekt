@@ -25,7 +25,16 @@
     </style>
     <style type="text/tailwindcss">
         @layer components{
-            .myBtn{
+            .SuzukimyBtn{
+                @apply border-[1px] border-blue-700 rounded-full font-bold text-blue-700 px-4 py-3 hover:bg-[#0066ff]-700 hover:text-white transition duration-300 ease-in-out;
+            }
+            .HondamyBtn{
+                @apply border-[1px] border-red-700 rounded-full font-bold text-red-700 px-4 py-3 hover:bg-[#ff0000]-700 hover:text-white transition duration-300 ease-in-out;
+            }
+            .YamahamyBtn{
+                @apply border-[1px] border-blue-700 rounded-full font-bold text-blue-700 px-4 py-3 hover:bg-[#0202ae]-700 hover:text-white transition duration-300 ease-in-out;
+            }
+            .KawasakimyBtn{
                 @apply border-[1px] border-green-700 rounded-full font-bold text-green-700 px-4 py-3 hover:bg-green-700 hover:text-white transition duration-300 ease-in-out;
             }
             .myInput{
@@ -60,14 +69,19 @@
         <div id="msg"></div>
         
         <div class="flex justify-center">
-            <button type="button" class="Yamaha Brand text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Yamaha</button>
-            <button type="button" class="Suzuki Brand text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Suzuki</button>
-            <button type="button" class="Honda Brand text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Honda</button>
-            <button type="button" class="Kawasaki Brand text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Kawasaki</button>
+            <button type="button" disabled class=" Yamaha Brand text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Yamaha</button>
+            <button type="button" disabled class=" Suzuki Brand text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Suzuki</button>
+            <button type="button" disabled class=" Honda Brand text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Honda</button>
+            <button type="button" disabled class=" Kawasaki Brand text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Kawasaki</button>
         </div>
         <div class="pagination flex flex-wrap justify-center gap-4 sor">
             
         </div>
+        
+
+
+  
+  
 
        
     </div>
