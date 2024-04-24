@@ -1,1 +1,0 @@
-https://raw.githubusercontent.com/Patrik930/MotoProjektImages/main/MotoImages

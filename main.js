@@ -1,7 +1,7 @@
 import { getData } from "./getData.js"
 import { fetchMotorcycles } from "./fetch-moto-api.js"
 import { verifyAttribute } from "./verifyAttribute.js"
-import { verifyPW } from "./verifyPW.js"
+
 
 let images = []
 
@@ -68,9 +68,7 @@ export function auth(e){
     }
     console.log(e.target.textContent);
     let username=document.getElementById('username').value
-  
     let pw=document.getElementById('pw').value
-
     let users= JSON.parse(localStorage.getItem('users')) || [] 
     if(username.length==0 || pw.length==0) return
     //register esetén:
