@@ -26,13 +26,13 @@
     <style type="text/tailwindcss">
         @layer components{
             .SuzukimyBtn{
-                @apply border-[1px] border-blue-700 rounded-full font-bold text-blue-700 px-4 py-3 hover:bg-[#0066ff]-700 hover:text-white transition duration-300 ease-in-out;
+                @apply border-[1px] border-sky-500 rounded-full font-bold text-sky-500 px-4 py-3 hover:bg-sky-500 hover:text-white transition duration-300 ease-in-out;
             }
             .HondamyBtn{
-                @apply border-[1px] border-red-700 rounded-full font-bold text-red-700 px-4 py-3 hover:bg-[#ff0000]-700 hover:text-white transition duration-300 ease-in-out;
+                @apply border-[1px] border-red-700 rounded-full font-bold text-red-700 px-4 py-3 hover:bg-[#ff0000] hover:text-white transition duration-300 ease-in-out;
             }
             .YamahamyBtn{
-                @apply border-[1px] border-blue-700 rounded-full font-bold text-blue-700 px-4 py-3 hover:bg-[#0202ae]-700 hover:text-white transition duration-300 ease-in-out;
+                @apply border-[1px] border-blue-700 rounded-full font-bold text-blue-700 px-4 py-3 hover:bg-[#0202ae] hover:text-white transition duration-300 ease-in-out;
             }
             .KawasakimyBtn{
                 @apply border-[1px] border-green-700 rounded-full font-bold text-green-700 px-4 py-3 hover:bg-green-700 hover:text-white transition duration-300 ease-in-out;
@@ -79,8 +79,45 @@
         </div>
         
 
-
-  
+<!-- Main modal -->
+<dialog id="default-modal" tabindex="-1" aria-hidden="true" class="bg-transparent shadow-lg">
+    <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white" id="modal-title">
+                </h3>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400" id="modal-data"> 
+                </p>
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+                <button onclick="modal.close()" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Close</button>
+            </div>
+        </div>
+    </div>
+</dialog>
+<script defer>
+    const modal = document.getElementById("default-modal")
+    const modal_data = document.getElementById("modal-data")
+    const modal_title = document.getElementById("modal-title")
+    function ShowModal(event){
+        const d = JSON.parse(event.target.dataset.specs)
+        modal_title.innerText = d.make + " " + d.model
+        modal_data.innerHTML = `
+        displacement: ${d.displacement} <br>
+        engine: ${d.engine} <br>
+        power: ${d.power} <br>
+        torque: ${d.torque} <br>
+        gearbox: ${d.gearbox} <br>
+        `
+        modal.showModal()
+    }
+</script>
   
 
        
