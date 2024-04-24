@@ -136,10 +136,14 @@ async function ShowMoreBrand(e){
     if(e.target.classList.contains("Suzuki")){
         h1.textContent = "Suzuki GSX-R"
         h1.style.color = "rgb(0, 102, 255)"
+        await getData("https://raw.githubusercontent.com/Patrik930/MotoProjektImagesSuzuki/main/MotoProjektImagesSuzuki", renderImages)
+        await fetchMotorcycles(renderData, "suzuki", "gsx-r")
     }
     if(e.target.classList.contains("Honda")){
         h1.textContent = "Honda CBR"
         h1.style.color = "rgb(255, 0, 0)"
+        await getData("https://raw.githubusercontent.com/Patrik930/MotoProjektImagesHonda/main/MotorProjektImagesHonda", renderImages)
+        await fetchMotorcycles(renderData, "honda", "cbr")
     }
     if(e.target.classList.contains("Kawasaki")){
         h1.textContent = "Kawasaki Ninja"
